@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Github, ExternalLink, Code2, ChevronDown, ArrowRight, Terminal, Coffee, Zap, Globe2, Mail, Facebook } from 'lucide-react';
 import likhubImage from './Likhub.png';
-import timekeeperImage from './Timekeeper.JPG';
+import timekeeperImage from './Timekeeper.jpg';
 import paroImage from './Paro1.png';
 import profileImage from './Josh1.jpg';
 
