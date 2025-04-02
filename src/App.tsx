@@ -161,7 +161,9 @@ const App: React.FC = () => {
                         <span className="px-3 py-1 rounded-full text-sm bg-yellow-500/10 text-yellow-400">MongoDB</span>
                       </div>
                       <a 
-                        href="#" 
+                        href="https://likhub-frontend.onrender.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         className="text-blue-400 hover:text-blue-300 transition-colors"
                       >
                         <ExternalLink size={20} />
