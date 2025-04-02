@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Github, ExternalLink, Code2, ChevronDown, ArrowRight, Terminal, Coffee, Zap, Globe2, Mail, Facebook } from 'lucide-react';
+import likhubImage from './Likhub.png';
+import timekeeperImage from './Timekeeper.JPG';
+import paroImage from './Paro1.png';
+import profileImage from './Josh1.jpg';
 
 const App: React.FC = () => {
   const [isEmailCopied, setIsEmailCopied] = useState<boolean>(false);
@@ -77,7 +81,7 @@ const App: React.FC = () => {
                 <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-500/50 to-violet-500/50 opacity-0 group-hover:opacity-100 animate-spin-slow transition-opacity duration-500"></div>
                 <div className="relative aspect-square w-72 h-72 rounded-full overflow-hidden border-2 border-slate-700/50 transform transition-transform duration-500 group-hover:scale-105">
                   <img
-                    src="/Josh1.jpg"
+                    src={profileImage}
                     alt="Joseph Ephraim L. Gulmatico"
                     className="w-full h-full object-cover"
                   />
@@ -141,7 +145,7 @@ const App: React.FC = () => {
                 <div className="group rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
                   <div className="relative overflow-hidden aspect-video">
                     <img
-                      src="/Likhub.png"
+                      src={likhubImage}
                       alt="Likhub Project"
                       className="w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                     />
@@ -180,7 +184,7 @@ const App: React.FC = () => {
                   >
                     <div className="relative overflow-hidden aspect-video">
                       <img
-                        src={`${project === 1 ? '/Timekeeper.JPG' : '/Paro1.png'}`}
+                        src={`${project === 1 ? timekeeperImage : paroImage}`}
                         alt={`Project ${project}`}
                         className="w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                       />

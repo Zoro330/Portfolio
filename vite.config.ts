@@ -7,4 +7,12 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png'],
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
+    }
+  }
 });
