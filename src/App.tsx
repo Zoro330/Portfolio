@@ -185,7 +185,7 @@ const App: React.FC = () => {
                   image: carsadaImage,
                   title: "Carsada App",
                   description:
-                    "An application that allows users to find the best jeepney/e-buss routes in the Iloilo City area.",
+                    "An application that allows users to find the best jeepney/e-bus routes in the Iloilo City area.",
                   tags: ["Flutter", "Firebase"],
                   link: "https://carsadaapp.vercel.app/"
                 }
