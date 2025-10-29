@@ -185,7 +185,7 @@ const App: React.FC = () => {
                   image: carsadaImage,
                   title: "Carsada App",
                   description:
-                    "An IoT-based smart agriculture system for monitoring soil moisture and humidity using Arduino sensors and real-time data display.",
+                    "An application that allows users to find the best jeepney/e-buss routes in the Iloilo City area.",
                   tags: ["Flutter", "Firebase"],
                   link: "https://carsadaapp.vercel.app/"
                 }
