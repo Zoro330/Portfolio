@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
-import { Github, ExternalLink, Code2, ChevronDown, ArrowRight, Terminal, Coffee, Zap, Globe2, Mail, Facebook } from 'lucide-react';
+import {
+  Github,
+  ExternalLink,
+  Code2,
+  ChevronDown,
+  ArrowRight,
+  Terminal,
+  Zap,
+  Globe2,
+  Mail,
+  Facebook
+} from 'lucide-react';
 import likhubImage from '/Likhub.png';
 import timekeeperImage from '/Timekeeper.jpg';
 import paroImage from '/Paro1.png';
 import profileImage from '/Josh1.jpg';
+import carsadaImage from '/Carsada.png';
 
 const App: React.FC = () => {
   const [isEmailCopied, setIsEmailCopied] = useState<boolean>(false);
 
   const copyEmail = async (): Promise<void> => {
-    await navigator.clipboard.writeText('dev@techforge.io');
+    await navigator.clipboard.writeText('josephgulmatico330@gmail.com');
     setIsEmailCopied(true);
     setTimeout(() => setIsEmailCopied(false), 2000);
   };
@@ -41,21 +53,20 @@ const App: React.FC = () => {
                   </h1>
                 </div>
                 <p className="text-xl text-slate-400 max-w-2xl pt-4">
-                  Beginner Full Stack Developer passionate about creating web applications. 
-                  Eager to learn and grow while building meaningful digital solutions.
+                  A 3rd-year IT student driven by curiosity, innovation, and the goal of creating meaningful digital experiences.
                 </p>
               </div>
-              
+
               <div className="flex flex-wrap gap-6 pt-8">
-                <a 
-                  href="#projects" 
+                <a
+                  href="#projects"
                   className="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
                 >
                   View Projects
                   <ArrowRight className="group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a 
-                  href="#contact" 
+                <a
+                  href="#contact"
                   className="group border border-slate-700 text-slate-300 px-8 py-4 rounded-xl hover:bg-slate-800 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
                 >
                   Get in Touch
@@ -69,7 +80,7 @@ const App: React.FC = () => {
                   <div className="text-slate-400">Year of Experience</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-3xl font-bold text-white">6</div>
+                  <div className="text-3xl font-bold text-white">5</div>
                   <div className="text-slate-400">Projects Completed</div>
                 </div>
               </div>
@@ -102,26 +113,29 @@ const App: React.FC = () => {
                 Learning and growing in modern web development technologies
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
                   icon: <Code2 className="text-blue-400" size={32} />,
                   title: "Frontend Development",
-                  description: "Learning to create responsive websites using HTML, CSS, and JavaScript. Exploring modern frameworks like React."
+                  description:
+                    "Learning to create responsive websites using HTML, CSS, and JavaScript. Exploring modern frameworks like React."
                 },
                 {
                   icon: <Globe2 className="text-violet-400" size={32} />,
                   title: "Backend Development",
-                  description: "Building foundational knowledge in server-side programming and database management using Node.js and SQL."
+                  description:
+                    "Building foundational knowledge in server-side programming and database management using Node.js and SQL."
                 },
                 {
                   icon: <Zap className="text-yellow-400" size={32} />,
                   title: "UI/UX Design",
-                  description: "Developing an eye for clean, user-friendly interfaces while learning design principles and best practices."
+                  description:
+                    "Developing an eye for clean, user-friendly interfaces while learning design principles and best practices."
                 }
               ].map((service, index) => (
-                <div 
+                <div
                   key={index}
                   className="group p-8 rounded-2xl bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 transition-all duration-300"
                 >
@@ -135,38 +149,76 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Project */}
+      {/* Featured Projects */}
       <section id="projects" className="py-32 relative overflow-hidden bg-slate-800/30">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-white mb-16">Featured Work</h2>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-              <div className="md:col-span-8">
-                <div className="group rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-blue-500/50 transition-all duration-300">
+            <h2 className="text-4xl font-bold text-white mb-16 text-center">Featured Work</h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {[
+                {
+                  image: likhubImage,
+                  title: "Likhub",
+                  description:
+                    "A web platform designed to showcase inventions and innovations — developed as an MVP for the Integrative Programming course.",
+                  tags: ["React", "Node.js", "Express", "MongoDB"],
+                  link: "https://likhub-frontend.onrender.com"
+                },
+                {
+                  image: timekeeperImage,
+                  title: "Timekeeper",
+                  description:
+                    "A productivity and time management prototype that helps students organize schedules and track their progress efficiently.",
+                  tags: ["Figma"],
+                  link: "#"
+                },
+                {
+                  image: paroImage,
+                  title: "Paro",
+                  description:
+                    "A subdivision management app prototype for resident tracking, visitor monitoring, and community announcements.",
+                  tags: ["Figma"],
+                  link: "#"
+                },
+                {
+                  image: carsadaImage,
+                  title: "Carsada App",
+                  description:
+                    "An IoT-based smart agriculture system for monitoring soil moisture and humidity using Arduino sensors and real-time data display.",
+                  tags: ["Flutter", "Firebase"],
+                  link: "https://carsadaapp.vercel.app/"
+                }
+              ].map((project, index) => (
+                <div
+                  key={index}
+                  className="group rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-blue-500/50 transition-all duration-300"
+                >
                   <div className="relative overflow-hidden aspect-video">
                     <img
-                      src={likhubImage}
-                      alt="Likhub Project"
+                      src={project.image}
+                      alt={project.title}
                       className="w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
                   </div>
                   <div className="p-8">
-                    <h3 className="text-2xl font-bold text-white mb-4">Likhub</h3>
-                    <p className="text-slate-400 mb-6">
-                      An MVP (Minimum Viable Product) project developed for Integrative Programming Class. 
-                      A web-app platform designed to showcase your inventions.
-                    </p>
+                    <h3 className="text-2xl font-bold text-white mb-4">{project.title}</h3>
+                    <p className="text-slate-400 mb-6">{project.description}</p>
                     <div className="flex justify-between items-center">
-                      <div className="flex gap-4">
-                        <span className="px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-400">React</span>
-                        <span className="px-3 py-1 rounded-full text-sm bg-green-500/10 text-green-400">Node.js</span>
-                        <span className="px-3 py-1 rounded-full text-sm bg-purple-500/10 text-purple-400">Express</span>
-                        <span className="px-3 py-1 rounded-full text-sm bg-yellow-500/10 text-yellow-400">MongoDB</span>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag, tIndex) => (
+                          <span
+                            key={tIndex}
+                            className="px-3 py-1 rounded-full text-sm bg-blue-500/10 text-blue-400"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
-                      <a 
-                        href="https://likhub-frontend.onrender.com" 
-                        target="_blank" 
+                      <a
+                        href={project.link}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-400 hover:text-blue-300 transition-colors"
                       >
@@ -175,54 +227,7 @@ const App: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="md:col-span-4 space-y-8">
-                {[1, 2].map((project) => (
-                  <div 
-                    key={project}
-                    className="group rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 hover:border-blue-500/50 transition-all duration-300"
-                  >
-                    <div className="relative overflow-hidden aspect-video">
-                      <img
-                        src={`${project === 1 ? timekeeperImage : paroImage}`}
-                        alt={`Project ${project}`}
-                        className="w-full object-cover transform transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-semibold text-white mb-2">
-                        {project === 1 ? 'Timekeeper' : 'Paro'}
-                      </h3>
-                      <p className="text-slate-400 text-sm mb-4">
-                        {project === 1 
-                          ? 'A time management application prototype for tracking tasks and productivity of the sudents.'
-                          : 'A community subdivision application prototype designed to streamline resident management, visitor tracking, and community announcements.'}
-                      </p>
-                      <div className="flex justify-between items-center">
-                        <div className="flex gap-2">
-                          {project === 1 ? (
-                            <>
-                              <span className="px-2 py-1 rounded-full text-xs bg-purple-500/10 text-purple-400">Figma</span>
-
-                            </>
-                          ) : (
-                            <>
-                              <span className="px-2 py-1 rounded-full text-xs bg-blue-500/10 text-blue-400">Figma</span>   
-                </>
-                          )}
-                        </div>
-                        <a 
-                          href="#" 
-                          className="text-blue-400 hover:text-blue-300 transition-colors"
-                        >
-                          <ExternalLink size={16} />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -238,25 +243,25 @@ const App: React.FC = () => {
               Drop me a message and I'll get back to you as soon as possible.
             </p>
             <div className="flex flex-wrap justify-center gap-6">
-              <button 
+              <button
                 onClick={copyEmail}
                 className="group bg-slate-800 text-white px-8 py-4 rounded-xl hover:bg-slate-700 transition-all duration-300 flex items-center gap-3"
               >
                 <Mail className="text-blue-400" size={20} />
-                <span>{isEmailCopied ? 'Email Copied!' : 'josephgulmatico@gmail.com'}</span>
+                <span>{isEmailCopied ? 'Email Copied!' : 'josephgulmatico330@gmail.com'}</span>
               </button>
-              <a 
-                href="https://github.com/Zoro330" 
-                target="_blank" 
+              <a
+                href="https://github.com/Zoro330"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-slate-800 text-white px-8 py-4 rounded-xl hover:bg-slate-700 transition-all duration-300 flex items-center gap-3"
               >
                 <Github className="text-blue-400" size={20} />
                 <span>View GitHub</span>
               </a>
-              <a 
-                href="https://www.facebook.com/josh15235788" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/josh15235788"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-slate-800 text-white px-8 py-4 rounded-xl hover:bg-slate-700 transition-all duration-300 flex items-center gap-3"
               >
